@@ -11,6 +11,7 @@ class SignInCubit extends Cubit<SignInState> {
 
   SignInCubit(this.authRepository) : super(SignInInitial());
 
+  // Sign In
   Future<void> signIn(String email, String password) async {
     emit(SignInLoading());
 
@@ -18,6 +19,21 @@ class SignInCubit extends Cubit<SignInState> {
       email,
       password,
     );
+
+    result.fold(
+      (failure) => emit(
+        SignInFailure(failure.message),
+      ),
+      (_) => emit(SignInSuccess()),
+    );
+  }
+
+  // Sign In With Google
+  Future<void> signInWithGoogle() async {
+    emit(SignInLoading());
+
+    final Either<Failures, void> result =
+        await authRepository.signInWithGoogle();
 
     result.fold(
       (failure) => emit(

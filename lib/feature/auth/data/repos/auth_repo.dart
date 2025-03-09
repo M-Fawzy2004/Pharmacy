@@ -2,6 +2,7 @@
 
 import 'dart:developer';
 import 'package:dartz/dartz.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:pharmacy_app/core/errors/failures.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -20,6 +21,10 @@ abstract class AuthRepository {
     String email,
     String password,
   );
+  // Sign In With Google
+  Future<Either<Failures, void>> signInWithGoogle();
+  // Sign Out
+  Future<Either<Failures, void>> signOut();
 }
 
 // Implementation of AuthRepository
@@ -74,6 +79,56 @@ class AuthRepositoryImpl implements AuthRepository {
         ServerFailure(
           message: e.toString(),
         ),
+      );
+    }
+  }
+
+  // Sign in with Google
+  @override
+  Future<Either<Failures, void>> signInWithGoogle() async {
+    try {
+      const webClientId =
+          '362884712086-om1kcrakksbn95c2r443dslick7sljeo.apps.googleusercontent.com';
+
+      final GoogleSignIn googleSignIn = GoogleSignIn(
+        serverClientId: webClientId,
+      );
+      final googleUser = await googleSignIn.signIn();
+      final googleAuth = await googleUser!.authentication;
+      final accessToken = googleAuth.accessToken;
+      final idToken = googleAuth.idToken;
+
+      if (accessToken == null) {
+        throw 'No Access Token found.';
+      }
+      if (idToken == null) {
+        throw 'No ID Token found.';
+      }
+
+      final res = await supabase.auth.signInWithIdToken(
+        provider: OAuthProvider.google,
+        idToken: idToken,
+        accessToken: accessToken,
+      );
+      return right(res);
+    } catch (e) {
+      return left(
+        ServerFailure(message: e.toString()),
+      );
+    }
+  }
+
+  // sign out
+  @override
+  Future<Either<Failures, void>> signOut() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    try {
+      await googleSignIn.signOut();
+      await supabase.auth.signOut();
+      return right(null);
+    } catch (e) {
+      return left(
+        ServerFailure(message: e.toString()),
       );
     }
   }

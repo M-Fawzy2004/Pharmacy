@@ -19,11 +19,11 @@ class CustomCheckBox extends StatelessWidget {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
-        height: 25,
-        width: 25,
+        height: 20,
+        width: 20,
         decoration: BoxDecoration(
           color: isChecker ? kBlueColor : Color(0xffE5EBF2),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: isChecker
             ? Icon(

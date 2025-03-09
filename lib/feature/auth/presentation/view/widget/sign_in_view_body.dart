@@ -20,8 +20,13 @@ class SignInViewBody extends StatefulWidget {
 }
 
 class _SignInViewBodyState extends State<SignInViewBody> {
+  // variable for autovalidate mode
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  // variable for form key
   final GlobalKey<FormState> formKey = GlobalKey();
+
+  // variable for text field
   late String email, password;
   @override
   Widget build(BuildContext context) {
@@ -104,8 +109,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                   onTap: () {},
                   child: Text(
                     'Forgot Password?',
-                    style:
-                        Styles.fontText13(context).copyWith(color: kBlueColor),
+                    style: Styles.fontText13(context).copyWith(
+                      color: kBlueColor,
+                    ),
                   ),
                 ),
               ],
