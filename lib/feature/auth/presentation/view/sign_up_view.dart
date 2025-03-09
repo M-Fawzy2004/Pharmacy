@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/feature/auth/presentation/view/widget/sign_up_view_body.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pharmacy_app/core/helper/get_it_service.dart';
+import 'package:pharmacy_app/feature/auth/data/repos/auth_repo.dart';
+import 'package:pharmacy_app/feature/auth/presentation/manager/sign_up/sign_up_cubit.dart';
+import 'package:pharmacy_app/feature/auth/presentation/view/widget/sign_up_bloc_consumer.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -12,7 +16,12 @@ class SignUpView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: SignUpViewBody(),
+          child: BlocProvider(
+            create: (context) => SignUpCubit(
+              getIt.get<AuthRepository>(),
+            ),
+            child: SignUpBlocConsumer(),
+          ),
         ),
       ),
     );
