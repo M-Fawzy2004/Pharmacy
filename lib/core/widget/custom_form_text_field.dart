@@ -72,7 +72,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         enabledBorder: methodEnableOutlineBorder(),
         focusedBorder: methodFocusOutlineBorder(),
         prefixIcon: widget.prefixIcon != null
-            ? Icon(widget.prefixIcon, color: Colors.grey)
+            ? Icon(
+                widget.prefixIcon,
+                color: kBlueColor,
+              )
             : null,
         suffixIcon: widget.isPassword
             ? IconButton(

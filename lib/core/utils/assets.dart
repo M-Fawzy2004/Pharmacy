@@ -30,6 +30,14 @@ class Assets {
   /// assets/images/google.png
   static const String imagesGoogle = "assets/images/google.png";
 
+  /// Assets for imagesHome
+  /// assets/images/home.png
+  static const String imagesHome = "assets/images/home.png";
+
+  /// Assets for imagesIconamoonProfileLight
+  /// assets/images/iconamoon_profile-light.png
+  static const String imagesIconamoonProfileLight = "assets/images/iconamoon_profile-light.png";
+
   /// Assets for imagesLogo
   /// assets/images/Logo.png
   static const String imagesLogo = "assets/images/Logo.png";
@@ -41,5 +49,13 @@ class Assets {
   /// Assets for imagesLogoblue
   /// assets/images/logoblue.png
   static const String imagesLogoblue = "assets/images/logoblue.png";
+
+  /// Assets for imagesOrder
+  /// assets/images/order.png
+  static const String imagesOrder = "assets/images/order.png";
+
+  /// Assets for imagesSearchIcon
+  /// assets/images/search_icon.png
+  static const String imagesSearchIcon = "assets/images/search_icon.png";
 }
 

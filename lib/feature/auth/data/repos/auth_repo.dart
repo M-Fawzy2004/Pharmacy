@@ -132,4 +132,7 @@ class AuthRepositoryImpl implements AuthRepository {
       );
     }
   }
+
+  // is logged in
+  bool isLoggedIn() => supabase.auth.currentUser != null;
 }

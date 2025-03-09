@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/core/utils/assets.dart';
+import 'package:pharmacy_app/feature/auth/data/repos/auth_repo.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/main_view.dart';
 import 'package:pharmacy_app/feature/onboarding/presentation/view/onboarding_view.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -36,7 +39,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+        var isLogin = AuthRepositoryImpl(Supabase.instance.client).isLoggedIn();
+        if (isLogin) {
+          Navigator.pushReplacementNamed(context, MainView.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+        }
       },
     );
   }

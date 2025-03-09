@@ -6,7 +6,7 @@ import 'package:pharmacy_app/core/widget/custom_button.dart';
 import 'package:pharmacy_app/core/widget/product_view_header.dart';
 import 'package:pharmacy_app/feature/auth/presentation/manager/sign_up/sign_up_cubit.dart';
 import 'package:pharmacy_app/feature/auth/presentation/view/sign_in_view.dart';
-import 'package:pharmacy_app/feature/auth/presentation/view/widget/custom_form_text_field.dart';
+import 'package:pharmacy_app/core/widget/custom_form_text_field.dart';
 import 'package:pharmacy_app/feature/auth/presentation/view/widget/not_have_and_have_account.dart';
 import 'package:pharmacy_app/feature/auth/presentation/view/widget/terms_and_condition.dart';
 
@@ -34,6 +34,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Form(
         key: formKey,
         autovalidateMode: autovalidateMode,
@@ -46,6 +47,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
             // icon back
             ProductViewHeader(
+              isNotfication: true,
               title: '',
             ),
 
