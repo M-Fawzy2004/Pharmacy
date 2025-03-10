@@ -6,6 +6,10 @@ class Assets {
   /// assets/images/bakground_image.png
   static const String imagesBakgroundImage = "assets/images/bakground_image.png";
 
+  /// Assets for imagesCaretext
+  /// assets/images/caretext.png
+  static const String imagesCaretext = "assets/images/caretext.png";
+
   /// Assets for imagesDoctor
   /// assets/images/doctor.png
   static const String imagesDoctor = "assets/images/doctor.png";
@@ -25,6 +29,10 @@ class Assets {
   /// Assets for imagesDownload1RemovebgPreview
   /// assets/images/download__1_-removebg-preview.png
   static const String imagesDownload1RemovebgPreview = "assets/images/download__1_-removebg-preview.png";
+
+  /// Assets for imagesDr
+  /// assets/images/dr.png
+  static const String imagesDr = "assets/images/dr.png";
 
   /// Assets for imagesGoogle
   /// assets/images/google.png
@@ -50,6 +58,10 @@ class Assets {
   /// assets/images/logoblue.png
   static const String imagesLogoblue = "assets/images/logoblue.png";
 
+  /// Assets for imagesMdiCart
+  /// assets/images/mdi_cart.png
+  static const String imagesMdiCart = "assets/images/mdi_cart.png";
+
   /// Assets for imagesOrder
   /// assets/images/order.png
   static const String imagesOrder = "assets/images/order.png";
@@ -57,5 +69,9 @@ class Assets {
   /// Assets for imagesSearchIcon
   /// assets/images/search_icon.png
   static const String imagesSearchIcon = "assets/images/search_icon.png";
+
+  /// Assets for imagesSpeaker
+  /// assets/images/speaker.png
+  static const String imagesSpeaker = "assets/images/speaker.png";
 }
 

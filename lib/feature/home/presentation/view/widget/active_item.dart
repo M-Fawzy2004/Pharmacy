@@ -21,6 +21,15 @@ class ActiveItem extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Text(
+              text,
+              style: Styles.fontText13(context).copyWith(
+                color: kBlueColor,
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.03,
+            ),
             Container(
               width: MediaQuery.sizeOf(context).width * 0.05,
               height: MediaQuery.sizeOf(context).height * 0.03,
@@ -33,15 +42,6 @@ class ActiveItem extends StatelessWidget {
                 child: Image.asset(image),
               ),
             ),
-            SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.03,
-            ),
-            Text(
-              text,
-              style: Styles.fontText13(context).copyWith(
-                color: kBlueColor,
-              ),
-            )
           ],
         ),
       ),

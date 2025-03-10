@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/home_view.dart';
 
-class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key, required this.currentViewIndex});
+class MainViewBody extends StatelessWidget {
+  const MainViewBody({super.key, required this.currentViewIndex});
 
   final int currentViewIndex;
 
@@ -10,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return IndexedStack(
       index: currentViewIndex,
-      children: const [
+      children: [
         HomeView(),
         SizedBox(),
         SizedBox(),

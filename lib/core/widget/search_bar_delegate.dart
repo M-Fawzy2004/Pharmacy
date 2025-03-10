@@ -9,7 +9,10 @@ class SearchBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
       color: Theme.of(context).scaffoldBackgroundColor,

@@ -5,7 +5,7 @@ import 'package:pharmacy_app/feature/home/presentation/view/widget/main_view_bod
 class MainView extends StatefulWidget {
   const MainView({super.key});
 
-  static const routeName = '/home';
+  static const routeName = '/main';
 
   @override
   State<MainView> createState() => _MainViewState();
@@ -23,7 +23,7 @@ class _MainViewState extends State<MainView> {
           setState(() {});
         },
       ),
-      body: HomeViewBody(
+      body: MainViewBody(
         currentViewIndex: currentViewIndex,
       ),
     );
