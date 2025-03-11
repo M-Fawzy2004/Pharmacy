@@ -18,17 +18,17 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
   List categories = [
     {
       "title":
-          "Your well-being is our top priority. We are dedicated to providing the best healthcare services for you",
+          "صحتك هي أولويتنا القصوى. نحن ملتزمون بتقديم أفضل خدمات الرعاية الصحية لك",
       "personImage": Assets.imagesDoctor1,
     },
     {
       "title":
-          "Day or night, we are always here for you. Our expert medical team is ready to support you 24/7 with care and compassion",
+          "نحن هنا من أجلك نهارًا أو ليلًا. فريقنا الطبي المتخصص جاهز لدعمك على مدار الساعة طوال أيام الأسبوع بكل عناية وتعاطف",
       "personImage": Assets.imagesDoctor2,
     },
     {
       "title":
-          "We deliver excellence in every service we provide. With cutting-edge technology and professional expertise, your health is in safe hands",
+          "نحن نقدم التميز في كل خدمة نقدمها. بفضل التكنولوجيا المتطورة والخبرة المهنية، فإن صحتك في أيدٍ أمينة",
       "personImage": Assets.imagesDoctor3,
     },
   ];

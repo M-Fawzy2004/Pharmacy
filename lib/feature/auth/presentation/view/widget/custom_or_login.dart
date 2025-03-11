@@ -18,7 +18,7 @@ class CutomOrLogin extends StatelessWidget {
           ),
         ),
         Text(
-          'OR',
+          'أو',
           style: Styles.fontText16(context).copyWith(
             fontWeight: FontWeight.w900,
           ),

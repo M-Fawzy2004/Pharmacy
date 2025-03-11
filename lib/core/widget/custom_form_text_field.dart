@@ -49,7 +49,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       cursorColor: kBlueColor,
       validator: (val) {
         if (val == null || val.isEmpty) {
-          return 'The Field is required';
+          return 'الحقل مطلوب';
         } else {
           return null;
         }

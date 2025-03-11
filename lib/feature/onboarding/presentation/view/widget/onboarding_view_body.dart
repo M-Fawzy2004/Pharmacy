@@ -33,7 +33,9 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
     return Stack(
       children: [
         // PageView
-        OnboardingPageView(controller: _controller),
+        OnboardingPageView(
+          controller: _controller,
+        ),
 
         // Dots
         Positioned(
@@ -57,7 +59,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: CustomButton(
-                  text: 'Get Started',
+                  text: 'البدء',
                   onTap: () {
                     Navigator.pushNamedAndRemoveUntil(
                       context,

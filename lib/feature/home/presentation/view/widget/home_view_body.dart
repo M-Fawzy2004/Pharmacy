@@ -45,8 +45,11 @@ class HomeViewBody extends StatelessWidget {
         ),
 
         // offers list
-        SliverToBoxAdapter(child: OfferItemList()),
+        SliverToBoxAdapter(
+          child: OfferItemList(),
+        ),
       ],
     );
   }
 }
+

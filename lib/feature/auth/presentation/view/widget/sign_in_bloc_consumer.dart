@@ -19,7 +19,7 @@ class SignInBlocConsumer extends StatelessWidget {
         if (state is SignInSuccess) {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnakBarError(
-              'Sign in successfully',
+              'تم تسجيل الدخول بنجاح',
               backgroundColor: kBlueColor,
             ),
           );
@@ -38,7 +38,7 @@ class SignInBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         return CustomModalProgressHUD(
-          text: 'Logging in',
+          text: 'جارى تسجيل الدخول',
           inAsyncCall: state is SignInLoading,
           child: SignInViewBody(),
         );

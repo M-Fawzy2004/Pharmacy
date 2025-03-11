@@ -6,7 +6,6 @@ import 'package:pharmacy_app/feature/home/presentation/view/widget/featured_butt
 
 class OffersItem extends StatelessWidget {
   const OffersItem({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class OffersItem extends StatelessWidget {
             children: [
               // text
               Text(
-                'Order medicine',
+                'اطلب الدواء',
                 style: Styles.fontText16(context).copyWith(
                   fontWeight: FontWeight.w800,
                 ),
@@ -37,7 +36,7 @@ class OffersItem extends StatelessWidget {
               ),
               // text
               Text(
-                'Upload prescription and tell us what \n you need. We’ll do the rest',
+                'قم بتحميل الوصفة الطبية وأخبرنا بما يلي \n أنت بحاجة إلى ذلك. وسنقوم بالباقي',
                 style: Styles.fontText13(context).copyWith(
                   color: Colors.grey,
                   fontWeight: FontWeight.w600,
@@ -49,7 +48,7 @@ class OffersItem extends StatelessWidget {
               ),
               // offers
               Text(
-                'Get Up to 30% off',
+                'احصل على خصم يصل إلى 30%',
                 style: Styles.fontText13(context).copyWith(
                   color: kBlueColor,
                   fontWeight: FontWeight.w900,
@@ -63,7 +62,7 @@ class OffersItem extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.sizeOf(context).width * 0.5,
                 child: FeaturedButton(
-                  title: 'Get Offer',
+                  title: 'اطلب الآن',
                 ),
               ),
             ],
@@ -71,11 +70,15 @@ class OffersItem extends StatelessWidget {
 
           // image dr
           Positioned(
-            right: 0,
+            left: 0,
             bottom: 0,
-            child: Image.asset(
-              Assets.imagesDr,
-              fit: BoxFit.cover,
+            child: Transform.flip(
+              flipX: true,
+              child: Image.asset(
+                Assets.imagesDr,
+                height: MediaQuery.sizeOf(context).height * 0.2,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],

@@ -13,7 +13,7 @@ class ProfileViewBody extends StatelessWidget {
         // set up profile
         SliverToBoxAdapter(
           child: ProductViewHeader(
-            title: 'Set Up Profile',
+            title: 'إعداد الملف الشخصي',
             isNotfication: false,
           ),
         ),

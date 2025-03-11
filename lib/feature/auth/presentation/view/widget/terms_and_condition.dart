@@ -38,11 +38,11 @@ class TermsAndCondition extends StatelessWidget {
               children: [
                 // text span 1
                 TextSpan(
-                  text: 'I agree to the ',
+                  text: 'انا أوافق على ',
                   style: Styles.fontText13(context),
                 ),
                 TextSpan(
-                  text: 'Terms and Conditions',
+                  text: 'الشروط والأحكام',
                   style: Styles.fontText13(context).copyWith(
                     color: kBlueColor,
                   ),

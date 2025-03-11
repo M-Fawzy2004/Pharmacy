@@ -6,6 +6,7 @@ import 'package:pharmacy_app/core/helper/get_it_service.dart';
 import 'package:pharmacy_app/core/helper/on_generate.dart';
 import 'package:pharmacy_app/feature/splash/presentation/view/splash_view.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,14 @@ class MyApp extends StatelessWidget {
       ),
     );
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ar', 'EG'),
+      ],
       theme: ThemeData(
         fontFamily: 'cairo',
         scaffoldBackgroundColor: Colors.white,

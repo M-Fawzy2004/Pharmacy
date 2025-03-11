@@ -65,7 +65,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
             // text field email
             CustomTextFormField(
               onSaved: (val) => email = val!,
-              hintText: 'Email',
+              hintText: 'البريد الإلكتروني',
               isPassword: false,
             ),
 
@@ -77,7 +77,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
             // text field password
             CustomTextFormField(
               onSaved: (val) => password = val!,
-              hintText: 'Password',
+              hintText: 'كلمة المرور',
               isPassword: true,
             ),
 
@@ -88,7 +88,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
 
             // sign up button
             CustomButton(
-              text: 'Sign In',
+              text: 'تسجيل الدخول',
               onTap: () {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
@@ -110,7 +110,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 GestureDetector(
                   onTap: () {},
                   child: Text(
-                    'Forgot Password?',
+                    'هل نسيت كلمة المرور؟',
                     style: Styles.fontText13(context).copyWith(
                       color: kBlueColor,
                     ),
@@ -142,8 +142,8 @@ class _SignInViewBodyState extends State<SignInViewBody> {
 
             // not have account and have account
             NotHaveAccountAndHaveAccount(
-              title1: 'Create an account? ',
-              title2: 'Sign Up',
+              title1: 'ليس لديك حساب؟',
+              title2: 'إنشاء حساب',
               onTap: () {
                 Navigator.pushNamed(context, SignUpView.routeName);
               },

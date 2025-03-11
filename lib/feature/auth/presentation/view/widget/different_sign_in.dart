@@ -32,7 +32,7 @@ class DifferentSignIn extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              'Sign In With Google',
+              'التسجيل بواسطه جوجل',
               style: Styles.fontText16(context),
             ),
             const Spacer(),

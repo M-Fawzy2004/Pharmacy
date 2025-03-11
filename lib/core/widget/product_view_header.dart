@@ -21,7 +21,7 @@ class ProductViewHeader extends StatelessWidget {
         children: [
           isNotfication
               ? Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: Container(
                     height: MediaQuery.sizeOf(context).height * 0.05,
                     width: MediaQuery.sizeOf(context).width * 0.1,

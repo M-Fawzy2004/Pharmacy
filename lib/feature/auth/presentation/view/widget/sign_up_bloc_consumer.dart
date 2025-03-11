@@ -19,7 +19,7 @@ class SignUpBlocConsumer extends StatelessWidget {
         if (state is SignUpSuccess) {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnakBarError(
-              'Sign in successfully',
+              'تم إنشاء الحساب بنجاح',
               backgroundColor: kBlueColor,
             ),
           );
@@ -38,7 +38,7 @@ class SignUpBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         return CustomModalProgressHUD(
-          text: 'Account is being created',
+          text: 'جاري إنشاء الحساب',
           inAsyncCall: state is SignUpLoading,
           child: SignUpViewBody(),
         );

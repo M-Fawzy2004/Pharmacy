@@ -37,7 +37,7 @@ class CustomModalProgressHUD extends StatelessWidget {
                     const SizedBox(height: 16),
                     const SizedBox(height: 8),
                     Text(
-                      'Wait a moment',
+                      'لحظه من فضلك',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

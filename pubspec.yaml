@@ -35,12 +35,16 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
+  flutter_localizations:
+    sdk: flutter
   flutter_svg: ^1.1.6
   get_it: ^8.0.3
   google_sign_in: ^6.3.0
+  intl: any
   shared_preferences: ^2.5.2
   smooth_page_indicator: ^1.2.1
   supabase_flutter: ^2.8.4
+
 
 dev_dependencies:
   flutter_lints: ^5.0.0

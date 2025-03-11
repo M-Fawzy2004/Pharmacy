@@ -15,21 +15,21 @@ List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
       BottomNavigationBarEntity(
         activeImage: Assets.imagesHome,
         inActiveImage: Assets.imagesHome,
-        name: 'Home',
+        name: 'الرئيسية',
       ),
       BottomNavigationBarEntity(
         activeImage: Assets.imagesSearchIcon,
         inActiveImage: Assets.imagesSearchIcon,
-        name: 'Categories',
+        name: 'المنتجات',
       ),
       BottomNavigationBarEntity(
         activeImage: Assets.imagesOrder,
         inActiveImage: Assets.imagesOrder,
-        name: 'Orders',
+        name: 'الطلبات',
       ),
       BottomNavigationBarEntity(
         activeImage: Assets.imagesIconamoonProfileLight,
         inActiveImage: Assets.imagesIconamoonProfileLight,
-        name: 'Profile',
+        name: 'الحساب',
       ),
     ];

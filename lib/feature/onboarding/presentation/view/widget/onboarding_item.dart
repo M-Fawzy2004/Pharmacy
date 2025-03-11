@@ -60,7 +60,6 @@ class OnboardingItem extends StatelessWidget {
           right: 20,
           child: Text(
             title,
-            textAlign: TextAlign.left,
             maxLines: 5,
             overflow: TextOverflow.ellipsis,
             style: Styles.titleSplashView(context).copyWith(

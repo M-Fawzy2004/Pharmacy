@@ -16,7 +16,7 @@ class SearchTextField extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(vertical: 12),
         fillColor: kBackgroundColor,
         filled: true,
-        hintText: 'Search medicine',
+        hintText: 'البحث عن منتج',
         hintStyle: Styles.titleLoginStyle(),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),

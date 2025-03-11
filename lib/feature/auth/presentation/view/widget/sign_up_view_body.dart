@@ -67,7 +67,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             // text field full name
             CustomTextFormField(
               onSaved: (val) => name = val!,
-              hintText: 'Full Name',
+              hintText: 'الاسم كامل',
               isPassword: false,
             ),
 
@@ -79,7 +79,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             // text field email
             CustomTextFormField(
               onSaved: (val) => email = val!,
-              hintText: 'Email',
+              hintText: 'البريد الالكتروني',
               isPassword: false,
             ),
 
@@ -91,7 +91,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             // text field password
             CustomTextFormField(
               onSaved: (val) => password = val!,
-              hintText: 'Password',
+              hintText: 'كلمة المرور',
               isPassword: true,
             ),
 
@@ -119,7 +119,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
             // sign up button
             CustomButton(
-              text: 'Sign Up',
+              text: 'إنشاء حساب',
               onTap: () {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
@@ -131,7 +131,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       buildSnakBarError(
-                        'Please accept terms and conditions',
+                        'يجب قبول الشروط والاحكام',
                       ),
                     );
                   }
@@ -146,8 +146,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
             // not have account and have account
             NotHaveAccountAndHaveAccount(
-              title1: 'Already have an account? ',
-              title2: 'Sign In',
+              title1: 'ليس لديك حساب؟',
+              title2: 'تسجيل دخول',
               onTap: () {
                 Navigator.pushNamed(context, SignInView.routeName);
               },

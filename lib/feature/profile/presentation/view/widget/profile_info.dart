@@ -41,7 +41,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
 
         // text
         Text(
-          'Personal Information',
+          'معلومات شخصية',
           style: Styles.fontText16(context),
         ),
 
@@ -53,7 +53,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
         // custom field profile info
         // full name
         CustomTextFormField(
-          hintText: 'Full Name',
+          hintText: 'الاسم الكامل',
           isPassword: false,
           prefixIcon: Icons.person,
         ),
@@ -65,7 +65,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
 
         // content number
         CustomTextFormField(
-          hintText: 'Content Number',
+          hintText: 'رقم الهاتف',
           isPassword: false,
           prefixIcon: Icons.phone,
         ),
@@ -74,8 +74,6 @@ class _ProfileInfoState extends State<ProfileInfo> {
         SizedBox(
           height: screenHeight * 0.01,
         ),
-
-        
       ],
     );
   }
