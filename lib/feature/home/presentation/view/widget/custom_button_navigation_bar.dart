@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/feature/home/data/bottom_naviagtion.dart';
+import 'package:pharmacy_app/feature/home/data/model/bottom_naviagtion.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/navigation_bar_item.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {

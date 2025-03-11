@@ -30,6 +30,7 @@ environment:
 dependencies:
   bloc: ^9.0.0
   bloc_provider: ^1.0.0
+  cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   flutter:
@@ -42,9 +43,9 @@ dependencies:
   google_sign_in: ^6.3.0
   intl: any
   shared_preferences: ^2.5.2
+  skeletonizer: ^1.4.3
   smooth_page_indicator: ^1.2.1
   supabase_flutter: ^2.8.4
-
 
 dev_dependencies:
   flutter_lints: ^5.0.0
