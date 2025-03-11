@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/core/widget/custom_button.dart';
-import 'package:pharmacy_app/feature/onboarding/presentation/view/onboarded_view.dart';
+import 'package:pharmacy_app/feature/auth/presentation/view/sign_up_view.dart';
 import 'package:pharmacy_app/feature/onboarding/presentation/view/widget/custom_dot_indicator.dart';
 import 'package:pharmacy_app/feature/onboarding/presentation/view/widget/onboarding_page_view.dart';
 
@@ -61,7 +61,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
                   onTap: () {
                     Navigator.pushNamedAndRemoveUntil(
                       context,
-                      OnboardedView.routeName,
+                      SignUpView.routeName,
                       (route) => false,
                     );
                   },

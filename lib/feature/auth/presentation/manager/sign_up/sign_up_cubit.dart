@@ -11,11 +11,10 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   final AuthRepository authRepository;
 
-  Future<void> signUp(String name, String email, String password) async {
+  Future<void> signUp( String email, String password) async {
     emit(SignUpLoading());
 
     final Either<Failures, void> result = await authRepository.signUp(
-      name,
       email,
       password,
     );

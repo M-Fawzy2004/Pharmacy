@@ -126,7 +126,6 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   if (isTermsAccepted) {
                     context.read<SignUpCubit>().signUp(
                           email,
-                          name,
                           password,
                         );
                   } else {

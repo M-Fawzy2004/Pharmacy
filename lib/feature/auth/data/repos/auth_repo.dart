@@ -12,7 +12,6 @@ abstract class AuthRepository {
 
   // Sign Up
   Future<Either<Failures, void>> signUp(
-    String name,
     String email,
     String password,
   );
@@ -37,13 +36,11 @@ class AuthRepositoryImpl implements AuthRepository {
   // Sign Up
   @override
   Future<Either<Failures, void>> signUp(
-    String name,
     String email,
     String password,
   ) async {
     try {
       final res = await supabase.auth.signUp(
-        data: {'name': name},
         email: email,
         password: password,
       );
