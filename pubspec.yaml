@@ -43,6 +43,7 @@ dependencies:
   get_it: ^8.0.3
   google_sign_in: ^6.3.0
   intl: any
+  pull_to_refresh: ^2.0.0
   shared_preferences: ^2.5.2
   skeletonizer: ^1.4.3
   smooth_page_indicator: ^1.2.1

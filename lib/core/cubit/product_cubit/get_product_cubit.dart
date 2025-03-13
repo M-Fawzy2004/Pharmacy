@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 
 import 'package:meta/meta.dart';
@@ -20,6 +22,7 @@ class ProductCubit extends Cubit<ProductState> {
         emit(ProductFailure(failure.message));
       },
       (products) {
+        products.shuffle(Random());
         emit(ProductSuccess(products));
       },
     );

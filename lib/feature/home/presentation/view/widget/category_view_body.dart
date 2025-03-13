@@ -40,7 +40,7 @@ class _CategoryViewBodyState extends State<CategoryViewBody> {
       slivers: [
         // header
         SliverToBoxAdapter(
-          child: CustomHeader(
+          child: HomeHeader(
             title: 'التصنيفات',
           ),
         ),

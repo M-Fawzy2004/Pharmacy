@@ -11,6 +11,7 @@ class MedicineItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
     return LayoutBuilder(
       builder: (context, constraints) {
         return Container(
@@ -22,24 +23,30 @@ class MedicineItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // صورة المنتج
+              // image
               Expanded(
                 child: CustomImageNetwork(
                   imageUrl: productModel.image,
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(
+                height: screenHeight * 0.01,
+              ),
 
-              // اسم المنتج
+              // name
               Text(
                 productModel.name,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.fontText16(context),
               ),
-              const SizedBox(height: 5),
 
-              // السعر وأيقونة الإضافة
+              // size box
+              SizedBox(
+                height: screenHeight * 0.01,
+              ),
+
+              // price and icon add
               Row(
                 children: [
                   Text(

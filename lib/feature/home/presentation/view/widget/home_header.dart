@@ -3,8 +3,8 @@ import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/helper/app_styles.dart';
 import 'package:pharmacy_app/core/utils/assets.dart';
 
-class CustomHeader extends StatelessWidget {
-  const CustomHeader({
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({
     super.key,
     this.onTap,
     required this.title,
@@ -16,7 +16,7 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 35.0),
+      padding: const EdgeInsets.only(top: 5.0),
       child: Row(
         children: [
           GestureDetector(
