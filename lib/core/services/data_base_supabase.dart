@@ -6,4 +6,11 @@ abstract class DataBaseSupabase {
     String? documentId,
     Map<String, dynamic>? query,
   });
+
+  // get category
+  Future<dynamic> getCategorySupbase({
+    required String path,
+    String? documentId,
+    Map<String, dynamic>? query,
+  });
 }

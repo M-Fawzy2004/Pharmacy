@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/category_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/home_view.dart';
 
 class MainViewBody extends StatelessWidget {
@@ -12,7 +13,7 @@ class MainViewBody extends StatelessWidget {
       index: currentViewIndex,
       children: [
         HomeView(),
-        SizedBox(),
+        CategoryView(),
         SizedBox(),
         SizedBox(),
       ],

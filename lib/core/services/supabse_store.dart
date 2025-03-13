@@ -33,4 +33,10 @@ class SupabseStore extends DataBaseSupabase {
       return null;
     }
   }
+  
+  @override
+  Future getCategorySupbase({required String path, String? documentId, Map<String, dynamic>? query}) {
+    // TODO: implement getCategorySupbase
+    throw UnimplementedError();
+  }
 }

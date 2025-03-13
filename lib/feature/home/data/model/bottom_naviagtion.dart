@@ -20,7 +20,7 @@ List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
       BottomNavigationBarEntity(
         activeImage: Assets.imagesSearchIcon,
         inActiveImage: Assets.imagesSearchIcon,
-        name: 'المنتجات',
+        name: 'التصنيفات',
       ),
       BottomNavigationBarEntity(
         activeImage: Assets.imagesOrder,

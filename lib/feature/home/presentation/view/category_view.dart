@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pharmacy_app/core/cubit/product_cubit/get_product_cubit.dart';
 import 'package:pharmacy_app/core/helper/get_it_service.dart';
 import 'package:pharmacy_app/core/repos/product_repo.dart';
-import 'package:pharmacy_app/feature/home/presentation/view/widget/home_view_body.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/widget/category_view_body.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class CategoryView extends StatelessWidget {
+  const CategoryView({super.key});
 
-  static const routeName = '/home';
+  static const routeName = '/category';
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: HomeViewBody(),
+          child: const CategoryViewBody(),
         ),
       ),
     );

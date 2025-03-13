@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/feature/auth/presentation/view/sign_in_view.dart';
 import 'package:pharmacy_app/feature/auth/presentation/view/sign_up_view.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/category_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/home_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/main_view.dart';
 import 'package:pharmacy_app/feature/onboarding/presentation/view/onboarding_view.dart';
@@ -31,11 +32,15 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     // home view
     case HomeView.routeName:
-      return MaterialPageRoute(builder: (context) => HomeView());  
+      return MaterialPageRoute(builder: (context) => HomeView());
 
     // profile view
     case ProfileView.routeName:
       return MaterialPageRoute(builder: (context) => ProfileView());
+
+    // category view
+    case CategoryView.routeName:
+      return MaterialPageRoute(builder: (context) => CategoryView());
 
     // default
     default:

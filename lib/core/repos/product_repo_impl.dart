@@ -10,6 +10,7 @@ class ProductRepoImpl extends ProductRepo {
 
   ProductRepoImpl(this.dataBaseSupabase);
 
+  // get all products
   @override
   Future<Either<Failures, List<ProductModel>>> getProducts() async {
     try {
@@ -30,5 +31,12 @@ class ProductRepoImpl extends ProductRepo {
         ),
       );
     }
+  }
+  
+  // get category products
+  @override
+  Future<Either<Failures, List<ProductModel>>> getCategoryProducts() {
+    // TODO: implement getCategoryProducts
+    throw UnimplementedError();
   }
 }

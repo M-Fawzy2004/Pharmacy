@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/cubit/product_cubit/get_product_cubit.dart';
-import 'package:pharmacy_app/core/utils/assets.dart';
 import 'package:pharmacy_app/feature/home/data/model/product_model.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/home_header.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/medicine_item_sliver_bloc_builder.dart';
@@ -47,8 +46,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         SliverToBoxAdapter(
           child: CustomHeader(
             title: 'الرئيسية',
-            imageRight: Assets.imagesMdiCart,
-            imageLeft: Assets.imagesImagesRemovebgPreview,
           ),
         ),
 
@@ -95,21 +92,23 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         ),
 
         // indicator
-        SliverToBoxAdapter(
-          child: Align(
-            alignment: Alignment.center,
-            child: SmoothPageIndicator(
-              controller: _pageController,
-              count: 2,
-              effect: ExpandingDotsEffect(
-                dotColor: Colors.grey,
-                activeDotColor: kBlueColor,
-                dotHeight: 8,
-                dotWidth: 8,
+        if (_filteredProducts.isEmpty && _searchController.text.isEmpty) ...[
+          SliverToBoxAdapter(
+            child: Align(
+              alignment: Alignment.center,
+              child: SmoothPageIndicator(
+                controller: _pageController,
+                count: 2,
+                effect: ExpandingDotsEffect(
+                  dotColor: Colors.grey,
+                  activeDotColor: kBlueColor,
+                  dotHeight: 8,
+                  dotWidth: 8,
+                ),
               ),
             ),
           ),
-        ),
+        ],
 
         // sized box
         SliverToBoxAdapter(

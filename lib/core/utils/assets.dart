@@ -10,6 +10,46 @@ class Assets {
   /// assets/images/caretext.png
   static const String imagesCaretext = "assets/images/caretext.png";
 
+  /// Assets for imagesCategory1
+  /// assets/images/category1.png
+  static const String imagesCategory1 = "assets/images/category1.png";
+
+  /// Assets for imagesCategory10
+  /// assets/images/category10.jpg
+  static const String imagesCategory10 = "assets/images/category10.jpg";
+
+  /// Assets for imagesCategory2
+  /// assets/images/category2.jpg
+  static const String imagesCategory2 = "assets/images/category2.jpg";
+
+  /// Assets for imagesCategory3
+  /// assets/images/category3.jpg
+  static const String imagesCategory3 = "assets/images/category3.jpg";
+
+  /// Assets for imagesCategory4
+  /// assets/images/category4.jpg
+  static const String imagesCategory4 = "assets/images/category4.jpg";
+
+  /// Assets for imagesCategory5
+  /// assets/images/category5.jpg
+  static const String imagesCategory5 = "assets/images/category5.jpg";
+
+  /// Assets for imagesCategory6
+  /// assets/images/category6.jpg
+  static const String imagesCategory6 = "assets/images/category6.jpg";
+
+  /// Assets for imagesCategory7
+  /// assets/images/category7.jpg
+  static const String imagesCategory7 = "assets/images/category7.jpg";
+
+  /// Assets for imagesCategory8
+  /// assets/images/category8.jpg
+  static const String imagesCategory8 = "assets/images/category8.jpg";
+
+  /// Assets for imagesCategory9
+  /// assets/images/category9.jpg
+  static const String imagesCategory9 = "assets/images/category9.jpg";
+
   /// Assets for imagesDoctor
   /// assets/images/doctor.png
   static const String imagesDoctor = "assets/images/doctor.png";

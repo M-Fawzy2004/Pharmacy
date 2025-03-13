@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/helper/app_styles.dart';
+import 'package:pharmacy_app/core/utils/assets.dart';
 
 class CustomHeader extends StatelessWidget {
   const CustomHeader({
     super.key,
     this.onTap,
-    required this.imageRight,
-    required this.imageLeft,
     required this.title,
   });
 
   final Function()? onTap;
-  final String imageRight, imageLeft, title;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +22,9 @@ class CustomHeader extends StatelessWidget {
           GestureDetector(
             onTap: onTap,
             child: Image.asset(
-              imageRight,
+              Assets.imagesMdiCart,
               height: MediaQuery.sizeOf(context).height * 0.05,
+              color: kBackgroundColor,
             ),
           ),
           Spacer(),
@@ -37,7 +37,7 @@ class CustomHeader extends StatelessWidget {
           ),
           Spacer(),
           Image.asset(
-            imageLeft,
+            Assets.imagesImagesRemovebgPreview,
             height: MediaQuery.sizeOf(context).height * 0.05,
           ),
         ],
