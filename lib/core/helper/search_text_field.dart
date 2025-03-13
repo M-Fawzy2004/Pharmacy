@@ -6,12 +6,22 @@ import 'package:pharmacy_app/core/utils/assets.dart';
 class SearchTextField extends StatelessWidget {
   const SearchTextField({
     super.key,
+    this.onTap,
+    this.controller,
+    this.onChanged,
   });
+
+  final Function()? onTap;
+  final TextEditingController? controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: onChanged,
+      controller: controller,
       style: Styles.textInputStyle(context),
+      onTap: onTap,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(vertical: 12),
         fillColor: kBackgroundColor,

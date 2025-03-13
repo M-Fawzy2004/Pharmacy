@@ -1,9 +1,11 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pharmacy_app/core/cubit/product_cubit/get_product_cubit.dart';
 import 'package:pharmacy_app/core/helper/custom_bloc_observer.dart';
 import 'package:pharmacy_app/core/helper/get_it_service.dart';
 import 'package:pharmacy_app/core/helper/on_generate.dart';
+import 'package:pharmacy_app/core/repos/product_repo.dart';
 import 'package:pharmacy_app/feature/splash/presentation/view/splash_view.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -17,7 +19,18 @@ void main() async {
   );
   Bloc.observer = CustomBlocObserver();
   setupGetIt();
-  runApp(const MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ProductCubit(
+            getIt.get<ProductRepo>(),
+          ),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

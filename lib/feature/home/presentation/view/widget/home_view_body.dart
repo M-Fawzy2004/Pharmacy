@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/cubit/product_cubit/get_product_cubit.dart';
-import 'package:pharmacy_app/core/helper/app_styles.dart';
-import 'package:pharmacy_app/core/helper/search_text_field.dart';
+import 'package:pharmacy_app/feature/home/data/model/product_model.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/home_header.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/medicine_item_sliver_bloc_builder.dart';
-import 'package:pharmacy_app/feature/home/presentation/view/widget/offer_item_list.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/widget/medicine_item_sliver_grid.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/widget/product_search_field.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -17,10 +15,13 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
+  final TextEditingController _searchController = TextEditingController();
+  List<ProductModel> _filteredProducts = [];
+
   @override
   void initState() {
-    context.read<ProductCubit>().getProduct();
     super.initState();
+    context.read<ProductCubit>().getProduct();
   }
 
   @override
@@ -29,68 +30,53 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
-        // size box
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: screenHeight * 0.02,
-          ),
-        ),
-
-        // home header
+        // header
         SliverToBoxAdapter(
           child: HomeHeader(),
         ),
 
-        // size box
+        // sized box
         SliverToBoxAdapter(
           child: SizedBox(
             height: screenHeight * 0.02,
           ),
         ),
 
-        // search
+        // search field
         SliverToBoxAdapter(
-          child: SearchTextField(),
+          child: ProductSearchField(
+            controller: _searchController,
+            onProductsFiltered: (products) {
+              setState(() {
+                _filteredProducts = products;
+              });
+            },
+          ),
         ),
 
-        // size box
+        // sized box
         SliverToBoxAdapter(
           child: SizedBox(
             height: screenHeight * 0.025,
           ),
         ),
 
-        // offers list
-        SliverToBoxAdapter(
-          child: OfferItemList(),
-        ),
-
-        // size box
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: screenHeight * 0.01,
+        // medicine item
+        if (_filteredProducts.isNotEmpty) ...[
+          MedicineItemSliverGrid(
+            product: _filteredProducts,
           ),
-        ),
-
-        // text product
-        SliverToBoxAdapter(
-          child: Text(
-            'المنتجات',
-            style: Styles.fontText16(context).copyWith(
-              color: kBlueColor,
-            ),
-          ),
-        ),
-        // size box
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: screenHeight * 0.01,
-          ),
-        ),
-
-        // medicine grid
-        MedicineItemSliverBlocBuilder(),
+        ] else ...[
+          MedicineItemSliverBlocBuilder(),
+        ],
       ],
     );
+  }
+
+  // dispose
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 }
