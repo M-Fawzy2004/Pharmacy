@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/helper/app_styles.dart';
 import 'package:pharmacy_app/core/utils/assets.dart';
 
@@ -48,7 +49,11 @@ class OnboardingItem extends StatelessWidget {
           left: 20,
           child: Row(
             children: [
-              Image.asset(Assets.imagesLogoHorzeintal),
+              Image.asset(
+                Assets.imagesImagesRemovebgPreview,
+                height: MediaQuery.sizeOf(context).height * 0.1,
+                color: kBlueColor,
+              ),
             ],
           ),
         ),

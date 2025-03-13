@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/utils/assets.dart';
 import 'package:pharmacy_app/feature/auth/data/repos/auth_repo.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/main_view.dart';
@@ -28,7 +29,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(Assets.imagesImagesRemovebgPreview),
+          Image.asset(
+            Assets.imagesImagesRemovebgPreview,
+            color: kBlueColor,
+          ),
         ],
       ),
     );
