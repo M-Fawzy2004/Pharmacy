@@ -11,56 +11,64 @@ class MedicineItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: kBlueColor, width: 2),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // image
-          Expanded(
-            child: CustomImageNetwork(
-              imageUrl: productModel.image,
-            ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: kBlueColor, width: 2),
           ),
-
-          // product name
-          Text(
-            productModel.name,
-            textDirection: TextDirection.ltr,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: Styles.fontText16(context),
-          ),
-
-          // icon add product
-          Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '${productModel.price.toString()} جنيه',
-                style: Styles.fontText13(context).copyWith(
-                  color: kBlueColor,
+              // صورة المنتج
+              Expanded(
+                child: CustomImageNetwork(
+                  imageUrl: productModel.image,
                 ),
               ),
-              Spacer(),
-              CircleAvatar(
-                radius: 17,
-                backgroundColor: kBlueColor,
-                child: FittedBox(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.add),
-                    color: kBackgroundColor,
+              const SizedBox(height: 5),
+
+              // اسم المنتج
+              Text(
+                productModel.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Styles.fontText16(context),
+              ),
+              const SizedBox(height: 5),
+
+              // السعر وأيقونة الإضافة
+              Row(
+                children: [
+                  Text(
+                    '${productModel.price} جنيه',
+                    style: Styles.fontText13(context).copyWith(
+                      color: kBlueColor,
+                    ),
                   ),
-                ),
+                  const Spacer(),
+                  CircleAvatar(
+                    radius: 17,
+                    backgroundColor: kBlueColor,
+                    child: FittedBox(
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

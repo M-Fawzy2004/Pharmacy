@@ -9,12 +9,17 @@ class MedicineItemSliverGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.sizeOf(context).width;
+    double itemWidth = screenWidth / 2;
+    double itemHeight = itemWidth * 1.2;
+    double aspectRatio = itemWidth / itemHeight;
+
     return SliverGrid.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 7,
         crossAxisSpacing: 7,
-        childAspectRatio: 0.8,
+        childAspectRatio: aspectRatio,
       ),
       itemCount: product.length,
       itemBuilder: (context, index) {

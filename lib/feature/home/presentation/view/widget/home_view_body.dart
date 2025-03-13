@@ -79,11 +79,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         ),
 
         // offers item
-        SliverToBoxAdapter(
-          child: OfferItemList(
-            pageController: _pageController,
+        if (_filteredProducts.isEmpty && _searchController.text.isEmpty) ...[
+          SliverToBoxAdapter(
+            child: OfferItemList(
+              pageController: _pageController,
+            ),
           ),
-        ),
+        ],
 
         // sized box
         SliverToBoxAdapter(
@@ -98,7 +100,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             alignment: Alignment.center,
             child: SmoothPageIndicator(
               controller: _pageController,
-              count: 3,
+              count: 2,
               effect: ExpandingDotsEffect(
                 dotColor: Colors.grey,
                 activeDotColor: kBlueColor,

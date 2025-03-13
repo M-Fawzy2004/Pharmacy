@@ -13,39 +13,30 @@ class CustomImageNetwork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Column(
-          children: [
-            // image
-            Container(
-              height: MediaQuery.sizeOf(context).height * 0.17,
-              width: MediaQuery.sizeOf(context).width,
-              color: kBackgroundColor,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10.0,
-                vertical: 10,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  imageUrl,
-                  fit: BoxFit.cover,
-                  height: MediaQuery.sizeOf(context).height * 0.1,
-                  width: MediaQuery.sizeOf(context).width * 0.35,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Icon(
-                      Icons.image,
-                      color: Colors.red,
-                      size: 50,
-                    );
-                  },
+    return GestureDetector(
+      onTap: onTap,
+      child: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            color: kBackgroundColor,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.all(8),
+          child: AspectRatio(
+            aspectRatio: 1.4,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => const Icon(
+                  Icons.image_not_supported,
+                  color: Colors.red,
+                  size: 50,
                 ),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

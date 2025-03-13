@@ -8,15 +8,17 @@ class OfferItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.18,
-      child: PageView.builder(
-        physics: const BouncingScrollPhysics(),
-        controller: pageController,
-        itemCount: 3,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(left: 10.0),
-          child: const OffersItem(),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      physics: const BouncingScrollPhysics(),
+      controller: pageController,
+      child: Row(
+        children: List.generate(
+          2,
+          (context) => Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 3.0),
+            child: OffersItem(),
+          ),
         ),
       ),
     );
