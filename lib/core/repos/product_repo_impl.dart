@@ -9,7 +9,7 @@ class ProductRepoImpl extends ProductRepo {
   final DataBaseSupabase dataBaseSupabase;
 
   ProductRepoImpl(this.dataBaseSupabase);
-  
+
   @override
   Future<Either<Failures, List<ProductModel>>> getProducts() async {
     try {
@@ -26,7 +26,7 @@ class ProductRepoImpl extends ProductRepo {
     } catch (e) {
       return left(
         ServerFailure(
-          message: 'Feild to get products',
+          message: 'There is a problem, please try again later.',
         ),
       );
     }

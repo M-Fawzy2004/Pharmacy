@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/helper/app_styles.dart';
-import 'package:pharmacy_app/core/utils/assets.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/featured_button.dart';
 
 class OffersItem extends StatelessWidget {
@@ -17,69 +16,47 @@ class OffersItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: kBackgroundColor,
       ),
-      child: Stack(
-        clipBehavior: Clip.none,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // text
-              Text(
-                'اطلب الدواء',
-                style: Styles.fontText16(context).copyWith(
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-              // SizeBox
-              SizedBox(
-                height: screenHeight * 0.005,
-              ),
-              // text
-              Text(
-                'قم بتحميل الوصفة الطبية وأخبرنا بما يلي \n أنت بحاجة إلى ذلك. وسنقوم بالباقي',
-                style: Styles.fontText13(context).copyWith(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              // SizeBox
-              SizedBox(
-                height: screenHeight * 0.005,
-              ),
-              // offers
-              Text(
-                'احصل على خصم يصل إلى 30%',
-                style: Styles.fontText13(context).copyWith(
-                  color: kBlueColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-              // sizeBox
-              SizedBox(
-                height: screenHeight * 0.005,
-              ),
-              // button
-              SizedBox(
-                width: MediaQuery.sizeOf(context).width * 0.5,
-                child: FeaturedButton(
-                  title: 'اطلب الآن',
-                ),
-              ),
-            ],
-          ),
-
-          // image dr
-          Positioned(
-            left: 0,
-            bottom: 0,
-            child: Transform.flip(
-              flipX: true,
-              child: Image.asset(
-                Assets.imagesDr,
-                height: MediaQuery.sizeOf(context).height * 0.2,
-                fit: BoxFit.cover,
-              ),
+          // text
+          Text(
+            'اطلب الدواء',
+            style: Styles.fontText16(context).copyWith(
+              fontWeight: FontWeight.w800,
             ),
+          ),
+          // SizeBox
+          SizedBox(
+            height: screenHeight * 0.005,
+          ),
+          // text
+          Text(
+            'قم بتحميل الوصفة الطبية وأخبرنا بما يلي أنت بحاجة إلى ذلك. وسنقوم بالباقي',
+            style: Styles.fontText13(context).copyWith(
+              color: Colors.grey,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          // SizeBox
+          SizedBox(
+            height: screenHeight * 0.005,
+          ),
+          // offers
+          Text(
+            'احصل على خصم يصل إلى 30%',
+            style: Styles.fontText13(context).copyWith(
+              color: kBlueColor,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+          // sizeBox
+          SizedBox(
+            height: screenHeight * 0.005,
+          ),
+          // button
+          FeaturedButton(
+            title: 'اطلب الآن',
           ),
         ],
       ),

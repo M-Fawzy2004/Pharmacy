@@ -14,7 +14,7 @@ class MedicineItemSliverGrid extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 7,
         crossAxisSpacing: 7,
-        childAspectRatio: 0.75,
+        childAspectRatio: 0.8,
       ),
       itemCount: product.length,
       itemBuilder: (context, index) {

@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,12 +19,15 @@ void main() async {
   Bloc.observer = CustomBlocObserver();
   setupGetIt();
   runApp(
-    const MyApp(),
+    DevicePreview(
+      enabled: true,
+      builder: (context) => PharmacyApp(),
+    ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PharmacyApp extends StatelessWidget {
+  const PharmacyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

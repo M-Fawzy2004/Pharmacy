@@ -46,6 +46,10 @@ class Assets {
   /// assets/images/iconamoon_profile-light.png
   static const String imagesIconamoonProfileLight = "assets/images/iconamoon_profile-light.png";
 
+  /// Assets for imagesImagesRemovebgPreview
+  /// assets/images/images-removebg-preview.png
+  static const String imagesImagesRemovebgPreview = "assets/images/images-removebg-preview.png";
+
   /// Assets for imagesLogo
   /// assets/images/Logo.png
   static const String imagesLogo = "assets/images/Logo.png";

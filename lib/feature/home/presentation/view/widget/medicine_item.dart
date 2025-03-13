@@ -12,76 +12,52 @@ class MedicineItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(color: kBlueColor, width: 2),
       ),
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // image
-          Positioned.fill(
-            child: Column(
-              children: [
-                // SizedBox
-                SizedBox(
-                  height: MediaQuery.sizeOf(context).height * 0.012,
-                ),
-                // image
-                CustomImageNetworkAndIconHeart(
-                  imageUrl: productModel.image,
-                ),
-              ],
+          Expanded(
+            child: CustomImageNetwork(
+              imageUrl: productModel.image,
             ),
           ),
 
-          // text
-          Positioned.fill(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10.0, bottom: 10, left: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  // text name
-                  Text(
-                    productModel.name,
-                    style: Styles.fontText16(context),
-                  ),
-                  // SizedBox
-                  SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.012,
-                  ),
-                  // text price
-                  Text(
-                    '${productModel.price.toString()} جنيه',
-                    style: Styles.fontText13(context).copyWith(
-                      color: kBlueColor,
-                    ),
-                  ),
-                ],
+          // product name
+          Text(
+            productModel.name,
+            textDirection: TextDirection.ltr,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Styles.fontText16(context),
+          ),
+
+          // icon add product
+          Row(
+            children: [
+              Text(
+                '${productModel.price.toString()} جنيه',
+                style: Styles.fontText13(context).copyWith(
+                  color: kBlueColor,
+                ),
               ),
-            ),
-          ),
-
-          // icon add button
-          Positioned(
-            bottom: 0,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(
+              Spacer(),
+              CircleAvatar(
                 radius: 17,
                 backgroundColor: kBlueColor,
                 child: FittedBox(
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
-                      Icons.add,
-                      color: kBackgroundColor,
-                    ),
+                    icon: Icon(Icons.add),
+                    color: kBackgroundColor,
                   ),
                 ),
               ),
-            ),
+            ],
           ),
         ],
       ),
