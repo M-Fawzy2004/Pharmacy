@@ -9,7 +9,10 @@ class OrderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: OrderViewBody(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 7.0),
+        child: OrderViewBody(),
+      ),
     );
   }
 }

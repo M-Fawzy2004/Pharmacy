@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/category_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/home_view.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/order_view.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/profile_view.dart';
 
 class MainViewBody extends StatelessWidget {
   const MainViewBody({super.key, required this.currentViewIndex});
@@ -14,8 +16,8 @@ class MainViewBody extends StatelessWidget {
       children: [
         HomeView(),
         CategoryView(),
-        SizedBox(),
-        SizedBox(),
+        OrderView(),
+        ProfileView(),
       ],
     );
   }
