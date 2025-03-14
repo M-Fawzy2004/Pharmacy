@@ -4,6 +4,7 @@ import 'package:pharmacy_app/feature/auth/presentation/view/sign_up_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/category_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/home_view.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/main_view.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/order_view.dart';
 import 'package:pharmacy_app/feature/onboarding/presentation/view/onboarding_view.dart';
 import 'package:pharmacy_app/feature/profile/presentation/view/profile_view.dart';
 import 'package:pharmacy_app/feature/splash/presentation/view/splash_view.dart';
@@ -41,6 +42,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     // category view
     case CategoryView.routeName:
       return MaterialPageRoute(builder: (context) => CategoryView());
+
+    // order view
+    case OrderView.routeName:
+      return MaterialPageRoute(builder: (context) => OrderView());
 
     // default
     default:

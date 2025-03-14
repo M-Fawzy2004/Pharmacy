@@ -17,11 +17,9 @@ class HomeView extends StatelessWidget {
         create: (context) => ProductCubit(
           getIt.get<ProductRepo>(),
         ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: HomeViewBody(),
-          ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30.0, left: 7, right: 7),
+          child: HomeViewBody(),
         ),
       ),
     );

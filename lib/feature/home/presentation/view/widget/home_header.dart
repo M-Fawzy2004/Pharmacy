@@ -15,33 +15,30 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 5.0),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: onTap,
-            child: Image.asset(
-              Assets.imagesMdiCart,
-              height: MediaQuery.sizeOf(context).height * 0.05,
-              color: kBackgroundColor,
-            ),
-          ),
-          Spacer(),
-          Text(
-            title,
-            style: Styles.fontText20(context).copyWith(
-              color: kBlueColor,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-          Spacer(),
-          Image.asset(
-            Assets.imagesImagesRemovebgPreview,
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: onTap,
+          child: Image.asset(
+            Assets.imagesMdiCart,
             height: MediaQuery.sizeOf(context).height * 0.05,
+            color: kBackgroundColor,
           ),
-        ],
-      ),
+        ),
+        Spacer(),
+        Text(
+          title,
+          style: Styles.fontText20(context).copyWith(
+            color: kBlueColor,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+        Spacer(),
+        Image.asset(
+          Assets.imagesImagesRemovebgPreview,
+          height: MediaQuery.sizeOf(context).height * 0.05,
+        ),
+      ],
     );
   }
 }

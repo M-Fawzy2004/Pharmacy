@@ -29,12 +29,13 @@ class CategoryItem extends StatelessWidget {
         child: Text(
           name,
           style: Styles.fontText20(context).copyWith(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.w900,
             shadows: [
               BoxShadow(
                 blurRadius: 100,
-                color: Colors.white,
+                spreadRadius: 20,
+                color: Colors.black,
               ),
             ],
           ),
