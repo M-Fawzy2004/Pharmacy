@@ -6,7 +6,7 @@ import 'package:pharmacy_app/core/helper/app_styles.dart';
 import 'package:pharmacy_app/feature/home/entities/cart_item_entity.dart';
 import 'package:pharmacy_app/feature/home/presentation/manager/cart_item/cart_item_cubit.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/custom_image_network.dart';
-import 'package:pharmacy_app/feature/home/presentation/view/widget/quantity_order.dart';
+import 'package:pharmacy_app/core/widget/quantity_order.dart';
 
 import '../../manager/cart_cubit/cart_cubit.dart';
 
