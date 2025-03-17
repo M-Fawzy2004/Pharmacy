@@ -58,7 +58,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.keyboardType,
       style: Styles.textInputStyle(context),
       decoration: InputDecoration(
-        fillColor: Color(0xffE5EBF2),
+        fillColor: kBackgroundColor,
         filled: true,
         contentPadding: const EdgeInsets.symmetric(
           vertical: 12,

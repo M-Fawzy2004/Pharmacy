@@ -8,6 +8,7 @@ ProductModel getDummyProduct() {
     image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrAp_GM259rL-v-qCOue3bE_9ApmH4N0MQg&s',
     price: 100,
+    amountItem: 10,
   );
 }
 

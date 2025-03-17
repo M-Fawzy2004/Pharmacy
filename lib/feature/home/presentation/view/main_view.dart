@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pharmacy_app/feature/home/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:pharmacy_app/feature/home/presentation/view/widget/custom_button_navigation_bar.dart';
-import 'package:pharmacy_app/feature/home/presentation/view/widget/main_view_body.dart';
+import 'package:pharmacy_app/feature/home/presentation/view/widget/main_view_bloc_consumer.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -23,9 +25,13 @@ class _MainViewState extends State<MainView> {
           setState(() {});
         },
       ),
-      body: MainViewBody(
-        currentViewIndex: currentViewIndex,
+      body: BlocProvider(
+        create: (context) => CartCubit(),
+        child: MainViewBlocConsumer(
+          currentViewIndex: currentViewIndex,
+        ),
       ),
     );
   }
 }
+

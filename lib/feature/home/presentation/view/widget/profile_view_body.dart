@@ -20,6 +20,7 @@ class ProfileViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: HomeHeader(
             title: 'إعدادات الملف الشخصي',
+            isCart: false,
           ),
         ),
         // sized box

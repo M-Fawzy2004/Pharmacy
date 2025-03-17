@@ -12,12 +12,11 @@ SnackBar buildSnakBarError(String? text, {Color? backgroundColor}) {
     ),
     backgroundColor: backgroundColor,
     behavior: SnackBarBehavior.floating,
-    duration: const Duration(seconds: 3),
-    margin: const EdgeInsets.all(16),
+    duration: const Duration(seconds: 2),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
     ),
-    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
     elevation: 6,
   );
 }

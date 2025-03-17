@@ -4,6 +4,7 @@ class ProductModel {
   final double price;
   final String image;
   final String details;
+  final int amountItem;
 
   ProductModel({
     required this.categoryName,
@@ -11,6 +12,7 @@ class ProductModel {
     required this.price,
     required this.image,
     required this.details,
+    required this.amountItem,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class ProductModel {
       price: (json['price'] as num).toDouble(),
       image: json['image_url'] ?? '',
       details: json['details'] ?? '',
+      amountItem: json['amount_item'] ?? 0,
     );
   }
 
@@ -30,6 +33,7 @@ class ProductModel {
       price: price,
       image: image,
       details: details,
+      amountItem: amountItem,
     );
   }
 }

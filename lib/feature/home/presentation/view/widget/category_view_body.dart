@@ -17,24 +17,21 @@ class CategoryViewBody extends StatelessWidget {
             height: screenHeight * 0.034,
           ),
         ),
-
         // header
         SliverToBoxAdapter(
           child: HomeHeader(
             title: 'التصنيفات',
+            isCart: true,
           ),
         ),
-
         // sized box
         SliverToBoxAdapter(
           child: SizedBox(
             height: screenHeight * 0.02,
           ),
         ),
-
         // category item
         CategoryItemSliverGrid(),
-
         // sized box
         SliverToBoxAdapter(
           child: SizedBox(

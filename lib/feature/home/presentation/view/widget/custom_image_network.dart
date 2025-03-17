@@ -6,10 +6,12 @@ class CustomImageNetwork extends StatelessWidget {
     super.key,
     required this.imageUrl,
     this.onTap,
+    required this.aspectRatio,
   });
 
   final String imageUrl;
   final void Function()? onTap;
+  final double aspectRatio;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class CustomImageNetwork extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(8),
           child: AspectRatio(
-            aspectRatio: 1.4,
+            aspectRatio: aspectRatio,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.network(

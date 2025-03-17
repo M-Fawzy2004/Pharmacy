@@ -23,8 +23,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   final TextEditingController _searchController = TextEditingController();
   List<ProductModel> _filteredProducts = [];
   final PageController _pageController = PageController();
-  final RefreshController _refreshController =
-      RefreshController(); // Controller for SmartRefresher
+  final RefreshController _refreshController = RefreshController();
 
   // get product
   @override
@@ -37,7 +36,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void dispose() {
     _searchController.dispose();
-    _refreshController.dispose(); // Dispose the refresh controller
+    _refreshController.dispose();
     super.dispose();
   }
 
@@ -72,6 +71,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           SliverToBoxAdapter(
             child: HomeHeader(
               title: 'الرئيسية',
+              isCart: true,
             ),
           ),
           // sized box
@@ -80,7 +80,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               height: screenHeight * 0.02,
             ),
           ),
-
           // search field
           SliverToBoxAdapter(
             child: ProductSearchField(
@@ -92,14 +91,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               },
             ),
           ),
-
           // sized box
           SliverToBoxAdapter(
             child: SizedBox(
               height: screenHeight * 0.025,
             ),
           ),
-
           // offer
           if (_filteredProducts.isEmpty && _searchController.text.isEmpty) ...[
             SliverToBoxAdapter(
@@ -126,12 +123,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
             ),
           ],
-
           // sized box
           SliverToBoxAdapter(
             child: SizedBox(height: screenHeight * 0.01),
           ),
-
           // medicine
           if (_filteredProducts.isNotEmpty) ...[
             MedicineItemSliverGrid(product: _filteredProducts),

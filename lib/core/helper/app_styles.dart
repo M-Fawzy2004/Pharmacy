@@ -33,7 +33,7 @@ abstract class Styles {
     return TextStyle(
       fontSize: 15,
       fontWeight: FontWeight.w700,
-      color: Color(0xff949D9E),
+      color: Colors.black38,
     );
   }
 

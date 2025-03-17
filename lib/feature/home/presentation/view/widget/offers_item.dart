@@ -34,7 +34,7 @@ class OffersItem extends StatelessWidget {
           Text(
             'قم بتحميل الوصفة الطبية وأخبرنا بما يلي أنت بحاجة إلى ذلك. وسنقوم بالباقي',
             style: Styles.fontText13(context).copyWith(
-              color: Colors.grey,
+              color: Colors.black38,
               fontWeight: FontWeight.w600,
             ),
           ),

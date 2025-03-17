@@ -8,24 +8,30 @@ class HomeHeader extends StatelessWidget {
     super.key,
     this.onTap,
     required this.title,
+    required this.isCart,
   });
 
   final Function()? onTap;
   final String title;
+  final bool isCart;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Image.asset(
-            Assets.imagesMdiCart,
-            height: MediaQuery.sizeOf(context).height * 0.05,
-            color: kBackgroundColor,
-          ),
-        ),
-        Spacer(),
+        isCart
+            ? GestureDetector(
+                onTap: onTap,
+                child: Image.asset(
+                  Assets.imagesMdiCart,
+                  height: MediaQuery.sizeOf(context).height * 0.05,
+                  color: kBlueColor,
+                ),
+              )
+            : SizedBox(
+                width: MediaQuery.sizeOf(context).width * 0.1,
+              ),
         Text(
           title,
           style: Styles.fontText20(context).copyWith(
@@ -33,10 +39,10 @@ class HomeHeader extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
         ),
-        Spacer(),
         Image.asset(
           Assets.imagesImagesRemovebgPreview,
           height: MediaQuery.sizeOf(context).height * 0.05,
+          color: kBlueColor,
         ),
       ],
     );
